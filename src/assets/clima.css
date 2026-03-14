@@ -1,0 +1,260 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background-color: #f0f4f8; 
+  color: #333;
+  margin: 0;
+  padding: 20px;
+}
+
+.contenedor-clima {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 30px 40px;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  width: 95%;
+  max-width: 1200px;
+  margin: 20px auto;
+  text-align: center;
+}
+
+.titulo-clima {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 5px;
+}
+
+.subtitulo-modelo {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.1rem;
+  color: #7f8c8d;
+  background-color: #ecf0f1;
+  padding: 5px 15px;
+  border-radius: 20px;
+  margin-bottom: 30px;
+  display: inline-block;
+}
+
+.panel-control {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  align-items: flex-end;
+  width: 100%;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 12px;
+  border: 1px solid #dee2e6;
+}
+
+.control-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.control-item label {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #495057;
+}
+
+.control-item input[type="number"] {
+  width: 120px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ced4da;
+  text-align: center;
+  font-size: 1rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.control-item input[type="number"]:focus {
+  outline: none;
+  border-color: #80bdff;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.boton-entrenar {
+  padding: 12px 25px;
+  font-size: 1rem;
+  font-weight: 600;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out, transform 0.1s ease;
+}
+
+.boton-entrenar:hover:not(:disabled) {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+.boton-entrenar:disabled {
+  background-color: #a9cce3;
+  cursor: not-allowed;
+}
+
+/* --- PANEL DE PREDICCIÓN --- */
+.panel-prediccion {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  align-items: flex-end;
+  width: 100%;
+  padding: 20px;
+  background-color: #e9ecef; /* Un color distinto para diferenciar */
+  border-radius: 12px;
+  margin: 15px 0 30px 0;
+  border: 1px solid #ced4da;
+}
+
+.boton-predecir {
+  padding: 12px 25px;
+  font-size: 1rem;
+  font-weight: 600;
+  background-color: #28a745; /* Color verde para la acción de predecir */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out, transform 0.1s ease;
+}
+
+.boton-predecir:hover:not(:disabled) {
+  background-color: #218838;
+  transform: translateY(-2px);
+}
+
+.boton-predecir:disabled {
+    background-color: #a3d9b1;
+    cursor: not-allowed;
+}
+
+
+/* --- TARJETA DE PREDICCIÓN FINAL --- */
+.tarjeta-prediccion-final {
+  background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+  color: white;
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 10px 25px rgba(0, 123, 255, 0.3);
+  width: 100%;
+  max-width: 350px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.tarjeta-prediccion-final h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  opacity: 0.9;
+}
+
+.hora-prediccion {
+  font-size: 1rem;
+  opacity: 0.8;
+  margin-bottom: 15px;
+}
+
+.icono-clima-final {
+  font-size: 5rem;
+  margin: 10px 0;
+  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.temperatura-final {
+  font-size: 4rem;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1;
+}
+
+.descripcion-final {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-top: 15px;
+  opacity: 0.9;
+}
+
+
+/* --- MENSAJE DE CARGA --- */
+.loader {
+  margin: 20px 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #007bff;
+}
+
+/* --- TABLA DE RESULTADOS --- */
+.contenedor-iteraciones {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.contenedor-iteraciones h3 {
+  font-size: 1.5rem;
+  color: #2c3e50;
+  margin-bottom: 15px;
+}
+
+/* Contenedor para hacer la tabla desplazable en móvil */
+.tabla-responsive {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: 8px;
+  border: 1px solid #dee2e6;
+}
+
+.tabla-clima {
+  width: 100%;
+  border-collapse: collapse;
+  white-space: nowrap; /* Evita que el texto en las celdas se parta */
+}
+
+.tabla-clima th,
+.tabla-clima td {
+  border-bottom: 1px solid #dee2e6;
+  padding: 12px 15px;
+  text-align: center;
+}
+
+.tabla-clima th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+  color: #495057;
+  position: sticky; /* Encabezado fijo al hacer scroll vertical */
+  top: 0;
+}
+
+.tabla-clima tbody tr:nth-child(even) {
+  background-color: #f8f9fa; /* Filas con colores alternos para fácil lectura */
+}
+
+.tabla-clima tbody tr:hover {
+  background-color: #e9ecef; /* Resaltado al pasar el ratón */
+}
+
+.columna-iteracion {
+  font-weight: 700;
+  background-color: #343a40;
+  color: white;
+  position: sticky; /* Columna de iteración fija al hacer scroll horizontal */
+  left: 0;
+  z-index: 1;
+}
+
+.columna-param {
+  font-weight: 500;
+  background-color: rgba(233, 236, 239, 0.7); /* Fondo sutil para w y b */
+  font-family: 'Courier New', Courier, monospace;
+}
