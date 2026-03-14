@@ -9,8 +9,8 @@ export default function Biseccion() {
   const [iteraciones, setIteraciones] = useState([]);
   const [isCalculating, setIsCalculating] = useState(false);
 
-  // f(x) = x² - 4
-  const f = (x) => Math.pow(x, 2) - 4;
+  // f(x) = x² - 2 es la función objetivo para encontrar la raíz (raíz cuadrada de 2)
+  const f = (x) => Math.pow(x, 2) - 2;
 
   const handleCalcular = () => {
     let ai = parseFloat(a);
@@ -88,7 +88,7 @@ export default function Biseccion() {
   return (
     <div className="contenedor-clima">
       <h1 className="titulo-clima">Método de Bisección</h1>
-      <p style={{textAlign: 'center', color: '#666'}}>Función Objetivo: f(x) = x² - 4</p>
+      <p style={{textAlign: 'center', color: '#666'}}>Función Objetivo: f(x) = x² - 2</p>
       
       <br />
       {/* <Link to="/clima" className="btn btn-warning">
